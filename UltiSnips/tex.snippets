@@ -44,7 +44,7 @@ def add_row(snip):
 
 endglobal
 
-snippet "b(egin)?" "begin{} / end{}" br
+snippet "beg" "begin{} / end{}" br
 \begin{${1:something}}
 	${0:${VISUAL}}
 \end{$1}
@@ -220,4 +220,12 @@ ${2:${VISUAL:code}}
 
 $0
 endsnippet
+
+snippet box "Box"
+`!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
+│ $1 │
+`!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
+$0
+endsnippet
+
 # vim:ft=snippets:
