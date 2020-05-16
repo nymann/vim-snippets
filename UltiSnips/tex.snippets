@@ -44,7 +44,7 @@ def add_row(snip):
 
 endglobal
 
-snippet "beg" "begin{} / end{}" br
+snippet "\\?b(egin)?" "begin{} / end{}" br
 \begin{${1:something}}
 	${0:${VISUAL}}
 \end{$1}
@@ -221,6 +221,7 @@ ${2:${VISUAL:code}}
 $0
 endsnippet
 
+<<<<<<< HEAD
 snippet box "Box"
 `!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
 │ $1 │
@@ -228,4 +229,26 @@ snippet box "Box"
 $0
 endsnippet
 
+=======
+snippet gln "New glossary item" b
+\newglossaryentry{${1:identifier}}
+{
+  name={${2:name}},
+  first={${3:first occurrence}},
+  sort={${4:sort value}},
+  description={${0:description}},
+}
+endsnippet
+snippet glnl "New long glossary item" b
+\longnewglossaryentry{${1:identifier}}
+{
+  name={${2:name}},
+  first={${3:first occurrence}},
+  sort={${4:sort value}},
+}
+{
+  ${0:description}
+}
+endsnippet
+>>>>>>> upstream/master
 # vim:ft=snippets:
